@@ -10,11 +10,15 @@ return new class extends Migration
     {
         Schema::create(table: 'customers', callback: function (Blueprint $table): void {
             $table->id();
-            $table->string(column: 'first_name')->nullable();
-            $table->string(column: 'last_name')->nullable();
-            $table->string(column: 'email')->nullable()->unique();
-            $table->string(column: 'phone_number')->nullable();
-            $table->text(column: 'description')->nullable();
+            $table->string(column: 'name');
+            $table->string(column: 'gender')->nullable();
+            $table->string(column: 'phone')->nullable();
+            $table->string(column: 'email')->unique()->nullable();
+            $table->text(column: 'address')->nullable();
+            $table->date(column: 'birthday')->nullable();
+            $table->decimal(column: 'balance', total: 15, places: 2)->default(value: 0);
+            $table->decimal(column: 'credit_limit', total: 15, places: 2)->default(value: 0);
+            $table->text(column: 'notes')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

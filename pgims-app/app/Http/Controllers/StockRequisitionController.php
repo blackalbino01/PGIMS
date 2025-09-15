@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\StockRequisition;
 
 class StockRequisitionController extends Controller
 {
@@ -11,54 +12,57 @@ class StockRequisitionController extends Controller
      */
     public function index()
     {
-        //
+        return StockRequisition::with(relations: ['fromStore', 'toStore', 'approvedBy', 'items'])->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate(rules: [
+            'from_store_id' => 'required|exists:stores,id',
+            'to_store_id' => 'required|exists:stores,id|different:from_store_id',
+            'status' => 'required|string',
+            'approved_by' => 'nullable|exists:users,id',
+        ]);
+
+        $stockRequisition = StockRequisition::create(attributes: $validated);
+
+        return response()->json(data: $stockRequisition, status: 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(StockRequisition $stockRequisition)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        return $stockRequisition->load(relations: ['fromStore', 'toStore', 'approvedBy', 'items']);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, StockRequisition $stockRequisition)
     {
-        //
+        $validated = $request->validate(rules: [
+            'from_store_id' => 'sometimes|exists:stores,id',
+            'to_store_id' => 'sometimes|exists:stores,id|different:from_store_id',
+            'status' => 'sometimes|string',
+            'approved_by' => 'nullable|exists:users,id',
+        ]);
+
+        $stockRequisition->update(attributes: $validated);
+
+        return response()->json(data: $stockRequisition);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( StockRequisition $stockRequisition)
     {
-        //
+        $stockRequisition->delete();
+
+        return response()->json(data: null, status: 204);
     }
 }

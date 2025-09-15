@@ -1,52 +1,80 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CustomerController extends Controller
 {
+    /**
+     * Display a listing of customers.
+     */
     public function index()
     {
-        return response()->json(Customer::paginate(25));
+        return Customer::all();
     }
 
+    /**
+     * Display the specified customer.
+     */
     public function show(Customer $customer)
     {
-        return response()->json($customer);
+        return $customer;
     }
 
+    /**
+     * Store a new customer.
+     */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'name' => 'required|string',
-            'email' => 'nullable|email',
-            'phone' => 'nullable|string',
+        $validated = $request->validate(rules: [
+            'name' => 'required|string|max:255',
+            'gender' => 'nullable|string|max:10',
+            'phone' => 'nullable|string|max:50',
+            'email' => 'nullable|email|max:255|unique:customers,email',
             'address' => 'nullable|string',
+            'birthday' => 'nullable|date',
+            'balance' => 'nullable|numeric|min:0',
+            'credit_limit' => 'nullable|numeric|min:0',
+            'notes' => 'nullable|string',
         ]);
 
-        $customer = Customer::create($data);
-        return response()->json($customer, 201);
+        $customer = Customer::create(attributes: $validated);
+
+        return response()->json(data: $customer, status: 201);
     }
 
+    /**
+     * Update the specified customer.
+     */
     public function update(Request $request, Customer $customer)
     {
-        $data = $request->validate([
-            'name' => 'sometimes|string',
-            'email' => 'nullable|email',
-            'phone' => 'nullable|string',
+        $validated = $request->validate(rules: [
+            'name' => 'sometimes|string|max:255',
+            'gender' => 'nullable|string|max:10',
+            'phone' => 'nullable|string|max:50',
+            'email' => 'nullable|email|max:255|unique:customers,email,' . $customer->id,
             'address' => 'nullable|string',
+            'birthday' => 'nullable|date',
+            'balance' => 'nullable|numeric|min:0',
+            'credit_limit' => 'nullable|numeric|min:0',
+            'notes' => 'nullable|string',
         ]);
 
-        $customer->update($data);
-        return response()->json($customer);
+        $customer->update(attributes: $validated);
+
+        return response()->json(data: $customer);
     }
 
+    /**
+     * Remove the specified customer.
+     */
     public function destroy(Customer $customer)
     {
         $customer->delete();
-        return response()->json(null, 204);
+
+        return response()->json(data: null, status: 204);
     }
 }
