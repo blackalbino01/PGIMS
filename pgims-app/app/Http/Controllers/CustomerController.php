@@ -41,6 +41,9 @@ class CustomerController extends Controller
             'notes' => 'nullable|string',
         ]);
 
+        $validated['balance'] = $validated['balance'] ?? 0;
+        $validated['credit_limit'] = $validated['credit_limit'] ?? 0;
+
         $customer = Customer::create(attributes: $validated);
 
         return response()->json(data: $customer, status: 201);
@@ -66,6 +69,27 @@ class CustomerController extends Controller
         $customer->update(attributes: $validated);
 
         return response()->json(data: $customer);
+    }
+
+    /**
+     * Deposit amount to customer's balance.
+     */
+    public function deposit(Request $request, Customer $customer)
+    {
+        $validated = $request->validate([
+            'amount' => 'required|numeric|min:1',
+        ]);
+
+        DB::transaction(callback: function () use ($customer, $validated): void {
+            $customer->balance += $validated['amount'];
+            $customer->save();
+
+        });
+
+        return response()->json(data: [
+            'message' => 'Deposit successful',
+            'customer' => $customer
+        ]);
     }
 
     /**
