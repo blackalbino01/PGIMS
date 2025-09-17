@@ -4,7 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
-return Application::configure(basePath: dirname(__DIR__))
+return Application::configure(basePath: dirname(path: __DIR__))
     ->withProviders()
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
@@ -14,12 +14,15 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(callback: function (Middleware $middleware): void {
         $middleware->statefulApi();
+        $middleware->alias(aliases: [
+            'role' => \App\Http\Middleware\CheckRole::class,
+        ]);
 
         $middleware->append(middleware: [
             \Fruitcake\Cors\CorsService::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-            \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class
+            \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         ]);
     })
     ->withExceptions(using: function (Exceptions $exceptions): void {

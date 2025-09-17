@@ -21,4 +21,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(related: StockRequisition::class, foreignKey: 'approved_by');
     }
+
+    public function hasRole(string $role): bool
+    {
+        return $this->role === $role;
+    }
+
 }
