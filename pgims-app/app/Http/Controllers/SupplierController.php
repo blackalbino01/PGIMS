@@ -9,6 +9,22 @@ class SupplierController extends Controller
 {
     /**
      * Display a listing of suppliers.
+     *
+     * @response [
+     *   {
+     *     "id": 1,
+     *     "name": "Supplier A",
+     *     "contact_name": "John Doe",
+     *     "email": "contact@example.com",
+     *     "phone": "123-456-7890",
+     *     "address": "123 Supplier St.",
+     *     "description": "Preferred vendor",
+     *     "created_at": "2025-09-19T18:06:00Z",
+     *     "updated_at": "2025-09-19T18:06:00Z"
+     *   }
+     * ]
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -17,6 +33,23 @@ class SupplierController extends Controller
 
     /**
      * Display the specified supplier.
+     *
+     * @urlParam supplier int required The ID of the supplier.
+     *
+     * @response {
+     *   "id": 1,
+     *   "name": "Supplier A",
+     *   "contact_name": "John Doe",
+     *   "email": "contact@example.com",
+     *   "phone": "123-456-7890",
+     *   "address": "123 Supplier St.",
+     *   "description": "Preferred vendor",
+     *   "created_at": "2025-09-19T18:06:00Z",
+     *   "updated_at": "2025-09-19T18:06:00Z"
+     * }
+     *
+     * @param Supplier $supplier
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Supplier $supplier)
     {
@@ -25,6 +58,28 @@ class SupplierController extends Controller
 
     /**
      * Store a newly created supplier.
+     *
+     * @bodyParam name string required Supplier name. Example: Supplier A
+     * @bodyParam contact_name string Nullable Contact person's name. Example: John Doe
+     * @bodyParam email string Nullable Unique contact email. Example: contact@example.com
+     * @bodyParam phone string Nullable Contact phone number. Example: 123-456-7890
+     * @bodyParam address string Nullable Supplier address.
+     * @bodyParam description string Nullable Additional info about the supplier.
+     *
+     * @response 201 {
+     *   "id": 1,
+     *   "name": "Supplier A",
+     *   "contact_name": "John Doe",
+     *   "email": "contact@example.com",
+     *   "phone": "123-456-7890",
+     *   "address": "123 Supplier St.",
+     *   "description": "Preferred vendor",
+     *   "created_at": "2025-09-19T18:06:00Z",
+     *   "updated_at": "2025-09-19T18:06:00Z"
+     * }
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -44,6 +99,30 @@ class SupplierController extends Controller
 
     /**
      * Update the specified supplier.
+     *
+     * @urlParam supplier int required The ID of the supplier.
+     * @bodyParam name string Nullable Updated supplier name.
+     * @bodyParam contact_name string Nullable Updated contact name.
+     * @bodyParam email string Nullable Updated email.
+     * @bodyParam phone string Nullable Updated phone.
+     * @bodyParam address string Nullable Updated address.
+     * @bodyParam description string Nullable Updated description.
+     *
+     * @response {
+     *   "id": 1,
+     *   "name": "Supplier A Updated",
+     *   "contact_name": "Jane Smith",
+     *   "email": "contactnew@example.com",
+     *   "phone": "987-654-3210",
+     *   "address": "456 New Supplier St.",
+     *   "description": "Updated vendor info",
+     *   "created_at": "2025-09-19T18:06:00Z",
+     *   "updated_at": "2025-09-19T18:45:00Z"
+     * }
+     *
+     * @param Request $request
+     * @param Supplier $supplier
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, Supplier $supplier)
     {
@@ -63,6 +142,13 @@ class SupplierController extends Controller
 
     /**
      * Remove the specified supplier.
+     *
+     * @urlParam supplier int required The ID of the supplier.
+     *
+     * @response 204 {}
+     *
+     * @param Supplier $supplier
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(Supplier $supplier)
     {

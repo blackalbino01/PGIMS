@@ -8,7 +8,30 @@ use App\Models\Inventory;
 class InventoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of inventory items with related store and product.
+     *
+     * @response [
+     *   {
+     *     "id": 1,
+     *     "store_id": 2,
+     *     "product_id": 5,
+     *     "quantity": 100,
+     *     "created_at": "2025-09-19T09:00:00Z",
+     *     "updated_at": "2025-09-19T09:00:00Z",
+     *     "store": {
+     *       "id": 2,
+     *       "name": "Main Store",
+     *       // other store fields
+     *     },
+     *     "product": {
+     *       "id": 5,
+     *       "name": "Product A",
+     *       // other product fields
+     *     }
+     *   }
+     * ]
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -17,7 +40,23 @@ class InventoryController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created inventory record.
+     *
+     * @bodyParam store_id int required Store ID reference. Example: 2
+     * @bodyParam product_id int required Product ID reference. Example: 5
+     * @bodyParam quantity int required Quantity in stock (min 0). Example: 100
+     *
+     * @response 201 {
+     *   "id": 1,
+     *   "store_id": 2,
+     *   "product_id": 5,
+     *   "quantity": 100,
+     *   "created_at": "2025-09-19T09:00:00Z",
+     *   "updated_at": "2025-09-19T09:00:00Z"
+     * }
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -33,7 +72,29 @@ class InventoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified inventory record with related store and product.
+     *
+     * @urlParam inventory int required Inventory record ID.
+     *
+     * @response {
+     *   "id": 1,
+     *   "store_id": 2,
+     *   "product_id": 5,
+     *   "quantity": 100,
+     *   "created_at": "2025-09-19T09:00:00Z",
+     *   "updated_at": "2025-09-19T09:00:00Z",
+     *   "store": {
+     *     "id": 2,
+     *     "name": "Main Store"
+     *   },
+     *   "product": {
+     *     "id": 5,
+     *     "name": "Product A"
+     *   }
+     * }
+     *
+     * @param Inventory $inventory
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Inventory $inventory)
     {
@@ -42,7 +103,25 @@ class InventoryController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified inventory record.
+     *
+     * @urlParam inventory int required Inventory record ID.
+     * @bodyParam store_id int Nullable Store ID.
+     * @bodyParam product_id int Nullable Product ID.
+     * @bodyParam quantity int Nullable Quantity in stock (min 0).
+     *
+     * @response {
+     *   "id": 1,
+     *   "store_id": 2,
+     *   "product_id": 5,
+     *   "quantity": 150,
+     *   "created_at": "2025-09-19T09:00:00Z",
+     *   "updated_at": "2025-09-19T10:00:00Z"
+     * }
+     *
+     * @param Request $request
+     * @param Inventory $inventory
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, Inventory $inventory)
     {
@@ -58,7 +137,14 @@ class InventoryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified inventory record.
+     *
+     * @urlParam inventory int required Inventory record ID.
+     *
+     * @response 204 {}
+     *
+     * @param Inventory $inventory
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(Inventory $inventory)
     {

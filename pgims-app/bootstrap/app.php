@@ -19,7 +19,7 @@ return Application::configure(basePath: dirname(path: __DIR__))
         ]);
 
         $middleware->append(middleware: [
-            \Fruitcake\Cors\CorsService::class,
+            \Fruitcake\Cors\HandleCors::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
             \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,

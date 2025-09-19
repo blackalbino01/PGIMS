@@ -8,7 +8,27 @@ use App\Models\StockRequisition;
 class StockRequisitionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of stock requisitions with related stores, approver, and items.
+     *
+     * @response [
+     *   {
+     *     "id": 1,
+     *     "from_store_id": 2,
+     *     "to_store_id": 3,
+     *     "status": "pending",
+     *     "approved_by": 5,
+     *     "created_at": "2025-09-19T16:44:00Z",
+     *     "updated_at": "2025-09-19T16:44:00Z",
+     *     "fromStore": { "id": 2, "name": "Store A" },
+     *     "toStore": { "id": 3, "name": "Store B" },
+     *     "approvedBy": { "id": 5, "name": "Manager" },
+     *     "items": [
+     *       / Array of requisition items /
+     *     ]
+     *   }
+     * ]
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -18,7 +38,25 @@ class StockRequisitionController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created stock requisition.
+     *
+     * @bodyParam from_store_id int required ID of the source store.
+     * @bodyParam to_store_id int required ID of the destination store (different from from_store_id).
+     * @bodyParam status string required Status of the requisition. Example: pending
+     * @bodyParam approved_by int Nullable User ID who approved the requisition.
+     *
+     * @response 201 {
+     *   "id": 1,
+     *   "from_store_id": 2,
+     *   "to_store_id": 3,
+     *   "status": "pending",
+     *   "approved_by": 5,
+     *   "created_at": "2025-09-19T16:44:00Z",
+     *   "updated_at": "2025-09-19T16:44:00Z"
+     * }
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -34,13 +72,58 @@ class StockRequisitionController extends Controller
         return response()->json(data: $stockRequisition, status: 201);
     }
 
+    /**
+     * Display a specific stock requisition with details.
+     *
+     * @urlParam stockRequisition int required The ID of the stock requisition.
+     *
+     * @response {
+     *   "id": 1,
+     *   "from_store_id": 2,
+     *   "to_store_id": 3,
+     *   "status": "pending",
+     *   "approved_by": 5,
+     *   "created_at": "2025-09-19T16:44:00Z",
+     *   "updated_at": "2025-09-19T16:44:00Z",
+     *   "fromStore": { "id": 2, "name": "Store A" },
+     *   "toStore": { "id": 3, "name": "Store B" },
+     *   "approvedBy": { "id": 5, "name": "Manager" },
+     *   "items": [
+     *     / Array of requisition items /
+     *   ]
+     * }
+     *
+     * @param StockRequisition $stockRequisition
+     * @return \Illuminate\Http\JsonResponse
+     */
+
     public function show(StockRequisition $stockRequisition)
     {
         return $stockRequisition->load(relations: ['fromStore', 'toStore', 'approvedBy', 'items']);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified stock requisition.
+     *
+     * @urlParam stockRequisition int required The ID of the stock requisition.
+     * @bodyParam from_store_id int Nullable ID of the source store.
+     * @bodyParam to_store_id int Nullable ID of the destination store (must be different from from_store_id).
+     * @bodyParam status string Nullable Status of the requisition.
+     * @bodyParam approved_by int Nullable User ID who approved the requisition.
+     *
+     * @response {
+     *   "id": 1,
+     *   "from_store_id": 2,
+     *   "to_store_id": 3,
+     *   "status": "approved",
+     *   "approved_by": 5,
+     *   "created_at": "2025-09-19T16:44:00Z",
+     *   "updated_at": "2025-09-19T17:00:00Z"
+     * }
+     *
+     * @param Request $request
+     * @param StockRequisition $stockRequisition
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, StockRequisition $stockRequisition)
     {
@@ -57,7 +140,14 @@ class StockRequisitionController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified stock requisition.
+     *
+     * @urlParam stockRequisition int required The ID of the stock requisition.
+     *
+     * @response 204 {}
+     *
+     * @param StockRequisition $stockRequisition
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy( StockRequisition $stockRequisition)
     {
