@@ -13,13 +13,13 @@ return Application::configure(basePath: dirname(path: __DIR__))
         health: '/up',
     )
     ->withMiddleware(callback: function (Middleware $middleware): void {
-        $middleware->statefulApi();
-        $middleware->alias(aliases: [
-            'role' => \App\Http\Middleware\CheckRole::class,
-        ]);
+        //iddleware->statefulApi();
+        // $middleware->alias(aliases: [
+        //     'role' => \App\Http\Middleware\CheckRole::class,
+        // ]);
 
         $middleware->append(middleware: [
-            \Fruitcake\Cors\HandleCors::class,
+            \Illuminate\Http\Middleware\HandleCors::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
             \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
