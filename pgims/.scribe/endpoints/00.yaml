@@ -416,7 +416,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -433,7 +433,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
       user: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -484,7 +484,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -501,7 +501,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
       user: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -606,7 +606,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -623,7 +623,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
       user: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -1247,14 +1247,14 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: 16
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1360,7 +1360,7 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: 16
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1377,8 +1377,323 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 4
       product: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/product-categories
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of product categories.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          [
+            {
+              "id": 1,
+              "name": "Beverages",
+              "description": "Drinks and refreshments",
+              "created_at": "2025-09-19T09:35:00Z",
+              "updated_at": "2025-09-19T09:35:00Z"
+            }
+          ]
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/product-categories
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a new product category.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Product category name.'
+        required: true
+        example: Beverages
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Nullable Product category description.'
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      name: Beverages
+      description: 'Eius et animi quos velit et.'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+            "id": 1,
+            "name": "Beverages",
+            "description": "Drinks and refreshments",
+            "created_at": "2025-09-19T09:35:00Z",
+            "updated_at": "2025-09-19T09:35:00Z"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/product-categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified product category.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product category.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      productCategory:
+        name: productCategory
+        description: 'The ID of the product category.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 16
+      productCategory: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "id": 1,
+            "name": "Beverages",
+            "description": "Drinks and refreshments",
+            "created_at": "2025-09-19T09:35:00Z",
+            "updated_at": "2025-09-19T09:35:00Z"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/product-categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update an existing product category.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product category.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Nullable Product category name.'
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Nullable Product category description.'
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      name: architecto
+      description: 'Eius et animi quos velit et.'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "id": 1,
+            "name": "Beverages Updated",
+            "description": "Updated description",
+            "created_at": "2025-09-19T09:35:00Z",
+            "updated_at": "2025-09-19T10:00:00Z"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/product-categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified product category.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product category.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      productCategory:
+        name: productCategory
+        description: 'The ID of the product category.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 16
+      productCategory: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -4289,7 +4604,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2025-09-23T18:01:28'
+        example: '2025-10-02T21:36:06'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4307,7 +4622,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      date: '2025-09-23T18:01:28'
+      date: '2025-10-02T21:36:06'
       store_id:
         - 16
     fileParameters: []
@@ -4390,7 +4705,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-09-23T18:01:28'
+        example: '2025-10-02T21:36:06'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4400,7 +4715,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-10-17'
+        example: '2051-10-26'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4418,8 +4733,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-09-23T18:01:28'
-      end: '2051-10-17'
+      start: '2025-10-02T21:36:06'
+      end: '2051-10-26'
       store_id:
         - 16
     fileParameters: []
@@ -4505,7 +4820,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-09-23T18:01:28'
+        example: '2025-10-02T21:36:06'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4515,7 +4830,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-10-17'
+        example: '2051-10-26'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4533,8 +4848,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-09-23T18:01:28'
-      end: '2051-10-17'
+      start: '2025-10-02T21:36:06'
+      end: '2051-10-26'
       store_id:
         - 16
     fileParameters: []
@@ -4742,7 +5057,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-09-23T18:01:28'
+        example: '2025-10-02T21:36:06'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4752,7 +5067,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-10-17'
+        example: '2051-10-26'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4770,8 +5085,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-09-23T18:01:28'
-      end: '2051-10-17'
+      start: '2025-10-02T21:36:06'
+      end: '2051-10-26'
       store_id:
         - 16
     fileParameters: []

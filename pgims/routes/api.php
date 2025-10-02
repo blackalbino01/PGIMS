@@ -18,6 +18,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReportingController;
+use App\Http\Controllers\ProductCategoryController;
 
 
 // Public routes for registration and login (no auth needed)
@@ -48,6 +49,7 @@ Route::middleware('auth:sanctum')->group(function () {
      */
     Route::middleware('role:admin,manager')->group(function () {
         Route::apiResource('products', ProductController::class)->except('show');
+        Route::apiResource('product-categories', ProductCategoryController::class);
         Route::apiResource('inventory', InventoryController::class);
         Route::apiResource('orders', OrderController::class);
         Route::apiResource('order-items', OrderItemController::class);
