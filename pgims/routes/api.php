@@ -19,6 +19,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReportingController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ExpenseController;
 
 
 // Public routes for registration and login (no auth needed)
@@ -47,7 +48,7 @@ Route::middleware('auth:sanctum')->group(function () {
      * Admin and Manager routes
      * Manage products, inventory, orders, stock requisitions, and related resources
      */
-    Route::middleware('role:admin,manager')->group(function () {
+    Route::middleware('role:admin,staff')->group(function () {
         Route::apiResource('products', ProductController::class)->except('show');
         Route::apiResource('product-categories', ProductCategoryController::class);
         Route::apiResource('inventory', InventoryController::class);
@@ -57,6 +58,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('stock-requisitions', StockRequisitionController::class);
         Route::apiResource('stock-requisition-items', StockRequisitionItemController::class);
         Route::apiResource('stores', StoreController::class);
+        Route::apiResource('expenses', ExpenseController::class);
 
         // Reporting accessible to Admin and Manager roles
         Route::get('reports/daily-sales', [ReportingController::class, 'dailySalesSummary']);

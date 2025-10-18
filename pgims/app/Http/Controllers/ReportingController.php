@@ -5,9 +5,132 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\Customer;
+use App\Models\BankAccount;
+use App\Models\Transactions;
+use App\Models\Store;
+use Carbon\Carbon;
 
 class ReportingController extends Controller
 {
+
+    /**
+     * Return dashboard data aligned with existing models and UI
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function adminDashboard()
+    {
+        $today = Carbon::today();
+        $startOfWeek = $today->copy()->startOfWeek();
+        $startOfQuarter = $today->copy()->firstOfQuarter();
+
+        // Sales for today and cost of goods sold via Order and related OrderItems & Products
+        $ordersToday = Order::with('items.product')->whereDate('created_at', $today)->get();
+        $salesForToday = $ordersToday->sum('total_amount');
+
+        $costOfGoodsSold = $ordersToday->sum(function ($order) {
+            return $order->items->sum(function ($item) {
+                return $item->quantity * $item->product->price; // Use product cost price if available
+            });
+        });
+
+        // Expenses inferred from Transactions of type 'expense'
+        $expensesForToday = Transactions::whereDate('transaction_date', $today)
+                            ->where('type', 'expense')
+                            ->sum('amount');
+
+        $profitForToday = $salesForToday - $costOfGoodsSold - $expensesForToday;
+
+        // Payment method sales breakdown assumed stored in Order->payment_method
+        $paymentsToday = Order::whereDate('created_at', $today)
+            ->selectRaw('payment_method, SUM(total_amount) as total')
+            ->groupBy('payment_method')
+            ->get()
+            ->mapWithKeys(fn($item) => [$item->payment_method => $item->total]);
+
+        $profitMargin = $salesForToday > 0 ? round(($profitForToday / $salesForToday) * 100, 1) : 0;
+
+        // Inventory summary (stock and retail)
+        $products = Product::all();
+        $stockValue = $products->sum(fn($p) => $p->inventory->sum('quantity') * $p->price); // Assume price=cost price
+        $retailValue = $stockValue; // Adjust if retail price differs on product model
+
+        // Trend data - sales by hour today for chart
+        $trendData = Order::selectRaw('HOUR(created_at) as hour, SUM(total_amount) as total')
+            ->whereDate('created_at', $today)
+            ->groupBy('hour')
+            ->orderBy('hour')
+            ->get()
+            ->mapWithKeys(fn($row) => [$row->hour => $row->total]);
+
+        // Cash flow this quarter from Transactions by type and bank account
+        $cashReceived = Transactions::where('type', 'received')->where('transaction_date', '>=', $startOfQuarter)->sum('amount');
+        $cashSent = Transactions::where('type', 'sent')->where('transaction_date', '>=', $startOfQuarter)->sum('amount');
+
+        $bankReceived = Transactions::where('type', 'received')->where('transaction_date', '>=', $startOfQuarter)->sum('amount');
+        $bankSent = Transactions::where('type', 'sent')->where('transaction_date', '>=', $startOfQuarter)->sum('amount');
+
+        $cashBalance = Transactions::where('type', 'balance')->sum('amount');
+        $bankBalance = BankAccount::sum('balance');
+
+        // Profit and Loss this week
+        $revenue = Order::whereDate('created_at', '>=', $startOfWeek)->sum('total_amount');
+        $operatingExpense = Transactions::where('type', 'expense')->whereDate('transaction_date', '>=', $startOfWeek)->sum('amount');
+        $profit = $revenue - $operatingExpense;
+
+        // Debtors & Creditors (in Customers and Suppliers if you have Supplier model)
+        $debtors = Customer::sum('balance');
+        // Since Supplier model missing balance field, use 0 for creditors
+        $creditors = 0;
+        $netPosition = $debtors - $creditors;
+
+        // Locations with sales counts last 30 days via Store->orders relation
+        $locations = Store::withCount(['orders' => function ($q) {
+            $q->where('created_at', '>=', now()->subDays(30));
+        }])->get(['id', 'name']);
+
+        return response()->json([
+            'sales_for_today' => $salesForToday,
+            'cost_of_goods_sold' => $costOfGoodsSold,
+            'expenses_for_today' => $expensesForToday,
+            'profit_for_today' => $profitForToday,
+            'payment_methods' => $paymentsToday,
+            'profit_margin' => $profitMargin,
+            'inventory_summary' => [
+                'stock_value' => $stockValue,
+                'retail_value' => $retailValue,
+            ],
+            'trend' => $trendData,
+            'cashflow' => [
+                'cash' => [
+                    'received' => $cashReceived,
+                    'sent' => $cashSent,
+                    'balance' => $cashBalance,
+                ],
+                'bank' => [
+                    'received' => $bankReceived,
+                    'sent' => $bankSent,
+                    'balance' => $bankBalance,
+                ],
+            ],
+            'profit_loss' => [
+                'profit' => $profit,
+                'revenue' => $revenue,
+                'operating_expense' => $operatingExpense,
+            ],
+            'debtors_creditors' => [
+                'debtors' => $debtors,
+                'creditors' => $creditors,
+                'net_position' => $netPosition,
+            ],
+            'locations' => $locations,
+        ]);
+    }
+
+
     /**
      * Get daily sales summary report.
      *
