@@ -245,6 +245,21 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-stores--id-">
                                 <a href="#endpoints-DELETEapi-stores--id-">Remove the specified store.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-expenses">
+                                <a href="#endpoints-GETapi-expenses">Display a listing of expenses.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-expenses">
+                                <a href="#endpoints-POSTapi-expenses">Store a new expense.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-expenses--id-">
+                                <a href="#endpoints-GETapi-expenses--id-">Display the specified expense.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-expenses--id-">
+                                <a href="#endpoints-PUTapi-expenses--id-">Update an existing expense.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-expenses--id-">
+                                <a href="#endpoints-DELETEapi-expenses--id-">Remove the specified expense.</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-reports-daily-sales">
                                 <a href="#endpoints-GETapi-reports-daily-sales">Get daily sales summary report.</a>
                             </li>
@@ -337,7 +352,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: October 2, 2025</li>
+        <li>Last updated: October 18, 2025</li>
     </ul>
 </div>
 
@@ -2967,7 +2982,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/products/4" \
+    "http://localhost/api/products/24" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2982,7 +2997,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products/4"
+    "http://localhost/api/products/24"
 );
 
 const headers = {
@@ -3104,10 +3119,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-products--id-"
-               value="4"
+               value="24"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>4</code></p>
+<p>The ID of the product. Example: <code>24</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3180,14 +3195,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/products/4" \
+    "http://localhost/api/products/24" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products/4"
+    "http://localhost/api/products/24"
 );
 
 const headers = {
@@ -3286,10 +3301,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-products--id-"
-               value="4"
+               value="24"
                data-component="url">
     <br>
-<p>The ID of the product. Example: <code>4</code></p>
+<p>The ID of the product. Example: <code>24</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>product</code></b>&nbsp;&nbsp;
@@ -3595,14 +3610,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/product-categories/16" \
+    --get "http://localhost/api/product-categories/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/product-categories/16"
+    "http://localhost/api/product-categories/1"
 );
 
 const headers = {
@@ -3708,10 +3723,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-product-categories--id-"
-               value="16"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the product category. Example: <code>16</code></p>
+<p>The ID of the product category. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>productCategory</code></b>&nbsp;&nbsp;
@@ -3739,7 +3754,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/product-categories/16" \
+    "http://localhost/api/product-categories/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3751,7 +3766,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/product-categories/16"
+    "http://localhost/api/product-categories/1"
 );
 
 const headers = {
@@ -3867,10 +3882,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-product-categories--id-"
-               value="16"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the product category. Example: <code>16</code></p>
+<p>The ID of the product category. Example: <code>1</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3910,14 +3925,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/product-categories/16" \
+    "http://localhost/api/product-categories/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/product-categories/16"
+    "http://localhost/api/product-categories/1"
 );
 
 const headers = {
@@ -4016,10 +4031,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-product-categories--id-"
-               value="16"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the product category. Example: <code>16</code></p>
+<p>The ID of the product category. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>productCategory</code></b>&nbsp;&nbsp;
@@ -9406,14 +9421,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/stores/16" \
+    --get "http://localhost/api/stores/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stores/16"
+    "http://localhost/api/stores/1"
 );
 
 const headers = {
@@ -9520,10 +9535,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-stores--id-"
-               value="16"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the store. Example: <code>16</code></p>
+<p>The ID of the store. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>store</code></b>&nbsp;&nbsp;
@@ -9551,7 +9566,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/stores/16" \
+    "http://localhost/api/stores/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -9564,7 +9579,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stores/16"
+    "http://localhost/api/stores/1"
 );
 
 const headers = {
@@ -9682,10 +9697,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-stores--id-"
-               value="16"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the store. Example: <code>16</code></p>
+<p>The ID of the store. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>store</code></b>&nbsp;&nbsp;
@@ -9747,14 +9762,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/stores/16" \
+    "http://localhost/api/stores/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stores/16"
+    "http://localhost/api/stores/1"
 );
 
 const headers = {
@@ -9853,10 +9868,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-stores--id-"
-               value="16"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the store. Example: <code>16</code></p>
+<p>The ID of the store. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>store</code></b>&nbsp;&nbsp;
@@ -9868,6 +9883,826 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="url">
     <br>
 <p>The ID of the store. Example: <code>16</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-expenses">Display a listing of expenses.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-expenses">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/expenses" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/expenses"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-expenses">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;category&quot;: &quot;Office&quot;,
+        &quot;amount&quot;: &quot;5000.00&quot;,
+        &quot;transaction_date&quot;: &quot;2025-10-01&quot;,
+        &quot;description&quot;: &quot;Paper purchase&quot;,
+        &quot;store_id&quot;: 1,
+        &quot;created_at&quot;: &quot;2025-10-01T10:00:00Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-10-01T10:00:00Z&quot;
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-expenses" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-expenses"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-expenses"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-expenses" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-expenses">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-expenses" data-method="GET"
+      data-path="api/expenses"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-expenses', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-expenses"
+                    onclick="tryItOut('GETapi-expenses');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-expenses"
+                    onclick="cancelTryOut('GETapi-expenses');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-expenses"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/expenses</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-expenses"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-expenses"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-expenses">Store a new expense.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-expenses">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/expenses" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"category\": \"Office\",
+    \"amount\": \"5000.00\",
+    \"transaction_date\": \"2025-10-01\",
+    \"description\": \"Eius et animi quos velit et.\",
+    \"store_id\": 16
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/expenses"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "category": "Office",
+    "amount": "5000.00",
+    "transaction_date": "2025-10-01",
+    "description": "Eius et animi quos velit et.",
+    "store_id": 16
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-expenses">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;category&quot;: &quot;Office&quot;,
+    &quot;amount&quot;: &quot;5000.00&quot;,
+    &quot;transaction_date&quot;: &quot;2025-10-01&quot;,
+    &quot;description&quot;: &quot;Paper purchase&quot;,
+    &quot;store_id&quot;: 1,
+    &quot;created_at&quot;: &quot;2025-10-01T10:00:00Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-10-01T10:00:00Z&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-expenses" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-expenses"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-expenses"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-expenses" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-expenses">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-expenses" data-method="POST"
+      data-path="api/expenses"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-expenses', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-expenses"
+                    onclick="tryItOut('POSTapi-expenses');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-expenses"
+                    onclick="cancelTryOut('POSTapi-expenses');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-expenses"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/expenses</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-expenses"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-expenses"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>category</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="category"                data-endpoint="POSTapi-expenses"
+               value="Office"
+               data-component="body">
+    <br>
+<p>Nullable Expense category. Example: <code>Office</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="amount"                data-endpoint="POSTapi-expenses"
+               value="5000.00"
+               data-component="body">
+    <br>
+<p>Expense amount. Example: <code>5000.00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>transaction_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="transaction_date"                data-endpoint="POSTapi-expenses"
+               value="2025-10-01"
+               data-component="body">
+    <br>
+<p>Date of expense. Example: <code>2025-10-01</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="POSTapi-expenses"
+               value="Eius et animi quos velit et."
+               data-component="body">
+    <br>
+<p>Nullable Description of the expense. Example: <code>Eius et animi quos velit et.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="store_id"                data-endpoint="POSTapi-expenses"
+               value="16"
+               data-component="body">
+    <br>
+<p>Nullable Store ID where expense occurred. Example: <code>16</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-expenses--id-">Display the specified expense.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-expenses--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/expenses/16" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/expenses/16"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-expenses--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;category&quot;: &quot;Office&quot;,
+    &quot;amount&quot;: &quot;5000.00&quot;,
+    &quot;transaction_date&quot;: &quot;2025-10-01&quot;,
+    &quot;description&quot;: &quot;Paper purchase&quot;,
+    &quot;store_id&quot;: 1,
+    &quot;created_at&quot;: &quot;2025-10-01T10:00:00Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-10-01T10:00:00Z&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-expenses--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-expenses--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-expenses--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-expenses--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-expenses--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-expenses--id-" data-method="GET"
+      data-path="api/expenses/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-expenses--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-expenses--id-"
+                    onclick="tryItOut('GETapi-expenses--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-expenses--id-"
+                    onclick="cancelTryOut('GETapi-expenses--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-expenses--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/expenses/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-expenses--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-expenses--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-expenses--id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the expense. Example: <code>16</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>expense</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="expense"                data-endpoint="GETapi-expenses--id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the expense. Example: <code>16</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-PUTapi-expenses--id-">Update an existing expense.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-expenses--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/expenses/16" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"category\": \"Office\",
+    \"amount\": \"5000.00\",
+    \"transaction_date\": \"2025-10-01\",
+    \"description\": \"Eius et animi quos velit et.\",
+    \"store_id\": 16
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/expenses/16"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "category": "Office",
+    "amount": "5000.00",
+    "transaction_date": "2025-10-01",
+    "description": "Eius et animi quos velit et.",
+    "store_id": 16
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-expenses--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;id&quot;: 1,
+    &quot;category&quot;: &quot;Office Updated&quot;,
+    &quot;amount&quot;: &quot;5500.00&quot;,
+    &quot;transaction_date&quot;: &quot;2025-10-02&quot;,
+    &quot;description&quot;: &quot;Updated paper purchase&quot;,
+    &quot;store_id&quot;: 1,
+    &quot;created_at&quot;: &quot;2025-10-01T10:00:00Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-10-02T11:00:00Z&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-expenses--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-expenses--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-expenses--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-expenses--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-expenses--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-expenses--id-" data-method="PUT"
+      data-path="api/expenses/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-expenses--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-expenses--id-"
+                    onclick="tryItOut('PUTapi-expenses--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-expenses--id-"
+                    onclick="cancelTryOut('PUTapi-expenses--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-expenses--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/expenses/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/expenses/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-expenses--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-expenses--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-expenses--id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the expense. Example: <code>16</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>category</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="category"                data-endpoint="PUTapi-expenses--id-"
+               value="Office"
+               data-component="body">
+    <br>
+<p>Nullable Expense category. Example: <code>Office</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>numeric</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="amount"                data-endpoint="PUTapi-expenses--id-"
+               value="5000.00"
+               data-component="body">
+    <br>
+<p>Nullable Expense amount. Example: <code>5000.00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>transaction_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="transaction_date"                data-endpoint="PUTapi-expenses--id-"
+               value="2025-10-01"
+               data-component="body">
+    <br>
+<p>Nullable Date of expense. Example: <code>2025-10-01</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="PUTapi-expenses--id-"
+               value="Eius et animi quos velit et."
+               data-component="body">
+    <br>
+<p>Nullable Description of the expense. Example: <code>Eius et animi quos velit et.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="store_id"                data-endpoint="PUTapi-expenses--id-"
+               value="16"
+               data-component="body">
+    <br>
+<p>Nullable Store ID where expense occurred. Example: <code>16</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-DELETEapi-expenses--id-">Remove the specified expense.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-expenses--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/expenses/16" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/expenses/16"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-expenses--id-">
+            <blockquote>
+            <p>Example response (204):</p>
+        </blockquote>
+                <pre>
+<code>Empty response</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-expenses--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-expenses--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-expenses--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-expenses--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-expenses--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-expenses--id-" data-method="DELETE"
+      data-path="api/expenses/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-expenses--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-expenses--id-"
+                    onclick="tryItOut('DELETEapi-expenses--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-expenses--id-"
+                    onclick="cancelTryOut('DELETEapi-expenses--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-expenses--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/expenses/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-expenses--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-expenses--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-expenses--id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the expense. Example: <code>16</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>expense</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="expense"                data-endpoint="DELETEapi-expenses--id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the expense. Example: <code>16</code></p>
             </div>
                     </form>
 
@@ -9888,7 +10723,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"date\": \"2025-10-02T21:36:06\",
+    \"date\": \"2025-10-18T21:40:40\",
     \"store_id\": [
         16
     ]
@@ -9914,7 +10749,7 @@ const headers = {
 };
 
 let body = {
-    "date": "2025-10-02T21:36:06",
+    "date": "2025-10-18T21:40:40",
     "store_id": [
         16
     ]
@@ -10042,10 +10877,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="GETapi-reports-daily-sales"
-               value="2025-10-02T21:36:06"
+               value="2025-10-18T21:40:40"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-10-02T21:36:06</code></p>
+<p>Must be a valid date. Example: <code>2025-10-18T21:40:40</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
@@ -10079,8 +10914,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"start\": \"2025-10-02T21:36:06\",
-    \"end\": \"2051-10-26\",
+    \"start\": \"2025-10-18T21:40:40\",
+    \"end\": \"2051-11-11\",
     \"store_id\": [
         16
     ]
@@ -10107,8 +10942,8 @@ const headers = {
 };
 
 let body = {
-    "start": "2025-10-02T21:36:06",
-    "end": "2051-10-26",
+    "start": "2025-10-18T21:40:40",
+    "end": "2051-11-11",
     "store_id": [
         16
     ]
@@ -10256,10 +11091,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start"                data-endpoint="GETapi-reports-payment-breakdown"
-               value="2025-10-02T21:36:06"
+               value="2025-10-18T21:40:40"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-10-02T21:36:06</code></p>
+<p>Must be a valid date. Example: <code>2025-10-18T21:40:40</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end</code></b>&nbsp;&nbsp;
@@ -10267,10 +11102,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end"                data-endpoint="GETapi-reports-payment-breakdown"
-               value="2051-10-26"
+               value="2051-11-11"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-10-26</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
@@ -10304,8 +11139,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"start\": \"2025-10-02T21:36:06\",
-    \"end\": \"2051-10-26\",
+    \"start\": \"2025-10-18T21:40:40\",
+    \"end\": \"2051-11-11\",
     \"store_id\": [
         16
     ]
@@ -10332,8 +11167,8 @@ const headers = {
 };
 
 let body = {
-    "start": "2025-10-02T21:36:06",
-    "end": "2051-10-26",
+    "start": "2025-10-18T21:40:40",
+    "end": "2051-11-11",
     "store_id": [
         16
     ]
@@ -10472,10 +11307,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start"                data-endpoint="GETapi-reports-profit"
-               value="2025-10-02T21:36:06"
+               value="2025-10-18T21:40:40"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-10-02T21:36:06</code></p>
+<p>Must be a valid date. Example: <code>2025-10-18T21:40:40</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end</code></b>&nbsp;&nbsp;
@@ -10483,10 +11318,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end"                data-endpoint="GETapi-reports-profit"
-               value="2051-10-26"
+               value="2051-11-11"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-10-26</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
@@ -10848,8 +11683,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"start\": \"2025-10-02T21:36:06\",
-    \"end\": \"2051-10-26\",
+    \"start\": \"2025-10-18T21:40:40\",
+    \"end\": \"2051-11-11\",
     \"store_id\": [
         16
     ]
@@ -10876,8 +11711,8 @@ const headers = {
 };
 
 let body = {
-    "start": "2025-10-02T21:36:06",
-    "end": "2051-10-26",
+    "start": "2025-10-18T21:40:40",
+    "end": "2051-11-11",
     "store_id": [
         16
     ]
@@ -11016,10 +11851,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start"                data-endpoint="GETapi-reports-expense"
-               value="2025-10-02T21:36:06"
+               value="2025-10-18T21:40:40"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-10-02T21:36:06</code></p>
+<p>Must be a valid date. Example: <code>2025-10-18T21:40:40</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end</code></b>&nbsp;&nbsp;
@@ -11027,10 +11862,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end"                data-endpoint="GETapi-reports-expense"
-               value="2051-10-26"
+               value="2051-11-11"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-10-26</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-11</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
@@ -11443,14 +12278,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/customers/16" \
+    --get "http://localhost/api/customers/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers/16"
+    "http://localhost/api/customers/10"
 );
 
 const headers = {
@@ -11563,10 +12398,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-customers--id-"
-               value="16"
+               value="10"
                data-component="url">
     <br>
-<p>The ID of the customer. Example: <code>16</code></p>
+<p>The ID of the customer. Example: <code>10</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>customer</code></b>&nbsp;&nbsp;
@@ -11594,7 +12429,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/customers/16" \
+    "http://localhost/api/customers/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -11613,7 +12448,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers/16"
+    "http://localhost/api/customers/10"
 );
 
 const headers = {
@@ -11743,10 +12578,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-customers--id-"
-               value="16"
+               value="10"
                data-component="url">
     <br>
-<p>The ID of the customer. Example: <code>16</code></p>
+<p>The ID of the customer. Example: <code>10</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>customer</code></b>&nbsp;&nbsp;
@@ -11874,14 +12709,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/customers/16" \
+    "http://localhost/api/customers/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers/16"
+    "http://localhost/api/customers/10"
 );
 
 const headers = {
@@ -11980,10 +12815,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-customers--id-"
-               value="16"
+               value="10"
                data-component="url">
     <br>
-<p>The ID of the customer. Example: <code>16</code></p>
+<p>The ID of the customer. Example: <code>10</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>customer</code></b>&nbsp;&nbsp;
@@ -13797,7 +14632,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/customers/16/deposit" \
+    "http://localhost/api/customers/10/deposit" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -13808,7 +14643,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers/16/deposit"
+    "http://localhost/api/customers/10/deposit"
 );
 
 const headers = {
@@ -13919,10 +14754,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="customer_id"                data-endpoint="POSTapi-customers--customer_id--deposit"
-               value="16"
+               value="10"
                data-component="url">
     <br>
-<p>The ID of the customer. Example: <code>16</code></p>
+<p>The ID of the customer. Example: <code>10</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>customer</code></b>&nbsp;&nbsp;
@@ -14315,14 +15150,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/bank-accounts/1" \
+    --get "http://localhost/api/bank-accounts/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/bank-accounts/1"
+    "http://localhost/api/bank-accounts/3"
 );
 
 const headers = {
@@ -14433,10 +15268,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-bank-accounts--id-"
-               value="1"
+               value="3"
                data-component="url">
     <br>
-<p>The ID of the bank account. Example: <code>1</code></p>
+<p>The ID of the bank account. Example: <code>3</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>bankAccount</code></b>&nbsp;&nbsp;
@@ -14464,7 +15299,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/bank-accounts/1" \
+    "http://localhost/api/bank-accounts/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -14481,7 +15316,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/bank-accounts/1"
+    "http://localhost/api/bank-accounts/3"
 );
 
 const headers = {
@@ -14607,10 +15442,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-bank-accounts--id-"
-               value="1"
+               value="3"
                data-component="url">
     <br>
-<p>The ID of the bank account. Example: <code>1</code></p>
+<p>The ID of the bank account. Example: <code>3</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>bankAccount</code></b>&nbsp;&nbsp;
@@ -14716,14 +15551,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/bank-accounts/1" \
+    "http://localhost/api/bank-accounts/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/bank-accounts/1"
+    "http://localhost/api/bank-accounts/3"
 );
 
 const headers = {
@@ -14822,10 +15657,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-bank-accounts--id-"
-               value="1"
+               value="3"
                data-component="url">
     <br>
-<p>The ID of the bank account. Example: <code>1</code></p>
+<p>The ID of the bank account. Example: <code>3</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>bankAccount</code></b>&nbsp;&nbsp;

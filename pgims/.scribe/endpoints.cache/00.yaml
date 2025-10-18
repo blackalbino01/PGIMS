@@ -1249,14 +1249,14 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: 4
+        example: 24
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 4
+      id: 24
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1362,7 +1362,7 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: 4
+        example: 24
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1379,7 +1379,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 4
+      id: 24
       product: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -1533,7 +1533,7 @@ endpoints:
         name: id
         description: 'The ID of the product category.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1550,7 +1550,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
       productCategory: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -1600,14 +1600,14 @@ endpoints:
         name: id
         description: 'The ID of the product category.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1677,7 +1677,7 @@ endpoints:
         name: id
         description: 'The ID of the product category.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1694,7 +1694,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
       productCategory: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -4351,7 +4351,7 @@ endpoints:
         name: id
         description: 'The ID of the store.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -4368,7 +4368,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
       store: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -4419,7 +4419,7 @@ endpoints:
         name: id
         description: 'The ID of the store.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -4436,7 +4436,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
       store: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -4519,7 +4519,7 @@ endpoints:
         name: id
         description: 'The ID of the store.'
         required: true
-        example: 16
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -4536,8 +4536,401 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 1
       store: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/expenses
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of expenses.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          [
+            {
+              "id": 1,
+              "category": "Office",
+              "amount": "5000.00",
+              "transaction_date": "2025-10-01",
+              "description": "Paper purchase",
+              "store_id": 1,
+              "created_at": "2025-10-01T10:00:00Z",
+              "updated_at": "2025-10-01T10:00:00Z"
+            }
+          ]
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/expenses
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a new expense.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      category:
+        name: category
+        description: 'Nullable Expense category.'
+        required: false
+        example: Office
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      amount:
+        name: amount
+        description: 'Expense amount.'
+        required: true
+        example: '5000.00'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      transaction_date:
+        name: transaction_date
+        description: 'Date of expense.'
+        required: true
+        example: '2025-10-01'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Nullable Description of the expense.'
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      store_id:
+        name: store_id
+        description: 'Nullable Store ID where expense occurred.'
+        required: false
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      category: Office
+      amount: '5000.00'
+      transaction_date: '2025-10-01'
+      description: 'Eius et animi quos velit et.'
+      store_id: 16
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+            "id": 1,
+            "category": "Office",
+            "amount": "5000.00",
+            "transaction_date": "2025-10-01",
+            "description": "Paper purchase",
+            "store_id": 1,
+            "created_at": "2025-10-01T10:00:00Z",
+            "updated_at": "2025-10-01T10:00:00Z"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/expenses/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified expense.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the expense.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expense:
+        name: expense
+        description: 'The ID of the expense.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 16
+      expense: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "id": 1,
+            "category": "Office",
+            "amount": "5000.00",
+            "transaction_date": "2025-10-01",
+            "description": "Paper purchase",
+            "store_id": 1,
+            "created_at": "2025-10-01T10:00:00Z",
+            "updated_at": "2025-10-01T10:00:00Z"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/expenses/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update an existing expense.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the expense.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 16
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      category:
+        name: category
+        description: 'Nullable Expense category.'
+        required: false
+        example: Office
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        custom: []
+      amount:
+        name: amount
+        description: 'Nullable Expense amount.'
+        required: false
+        example: '5000.00'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      transaction_date:
+        name: transaction_date
+        description: 'Nullable Date of expense.'
+        required: false
+        example: '2025-10-01'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      description:
+        name: description
+        description: 'Nullable Description of the expense.'
+        required: false
+        example: 'Eius et animi quos velit et.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+      store_id:
+        name: store_id
+        description: 'Nullable Store ID where expense occurred.'
+        required: false
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        custom: []
+    cleanBodyParameters:
+      category: Office
+      amount: '5000.00'
+      transaction_date: '2025-10-01'
+      description: 'Eius et animi quos velit et.'
+      store_id: 16
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "id": 1,
+            "category": "Office Updated",
+            "amount": "5500.00",
+            "transaction_date": "2025-10-02",
+            "description": "Updated paper purchase",
+            "store_id": 1,
+            "created_at": "2025-10-01T10:00:00Z",
+            "updated_at": "2025-10-02T11:00:00Z"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/expenses/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified expense.'
+      description: ''
+      authenticated: false
+      deprecated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the expense.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+      expense:
+        name: expense
+        description: 'The ID of the expense.'
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 16
+      expense: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -4606,7 +4999,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2025-10-02T21:36:06'
+        example: '2025-10-18T21:40:40'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4624,7 +5017,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      date: '2025-10-02T21:36:06'
+      date: '2025-10-18T21:40:40'
       store_id:
         - 16
     fileParameters: []
@@ -4707,7 +5100,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-10-02T21:36:06'
+        example: '2025-10-18T21:40:40'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4717,7 +5110,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-10-26'
+        example: '2051-11-11'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4735,8 +5128,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-10-02T21:36:06'
-      end: '2051-10-26'
+      start: '2025-10-18T21:40:40'
+      end: '2051-11-11'
       store_id:
         - 16
     fileParameters: []
@@ -4822,7 +5215,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-10-02T21:36:06'
+        example: '2025-10-18T21:40:40'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4832,7 +5225,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-10-26'
+        example: '2051-11-11'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -4850,8 +5243,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-10-02T21:36:06'
-      end: '2051-10-26'
+      start: '2025-10-18T21:40:40'
+      end: '2051-11-11'
       store_id:
         - 16
     fileParameters: []
@@ -5059,7 +5452,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-10-02T21:36:06'
+        example: '2025-10-18T21:40:40'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5069,7 +5462,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-10-26'
+        example: '2051-11-11'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5087,8 +5480,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-10-02T21:36:06'
-      end: '2051-10-26'
+      start: '2025-10-18T21:40:40'
+      end: '2051-11-11'
       store_id:
         - 16
     fileParameters: []
@@ -5335,7 +5728,7 @@ endpoints:
         name: id
         description: 'The ID of the customer.'
         required: true
-        example: 16
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -5352,7 +5745,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 10
       customer: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -5409,7 +5802,7 @@ endpoints:
         name: id
         description: 'The ID of the customer.'
         required: true
-        example: 16
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -5426,7 +5819,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 10
       customer: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -5581,7 +5974,7 @@ endpoints:
         name: id
         description: 'The ID of the customer.'
         required: true
-        example: 16
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -5598,7 +5991,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 16
+      id: 10
       customer: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -6535,7 +6928,7 @@ endpoints:
         name: customer_id
         description: 'The ID of the customer.'
         required: true
-        example: 16
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -6552,7 +6945,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      customer_id: 16
+      customer_id: 10
       customer: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -6789,7 +7182,7 @@ endpoints:
         name: id
         description: 'The ID of the bank account.'
         required: true
-        example: 1
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -6806,7 +7199,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 3
       bankAccount: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -6861,7 +7254,7 @@ endpoints:
         name: id
         description: 'The ID of the bank account.'
         required: true
-        example: 1
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -6878,7 +7271,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 3
       bankAccount: 16
     queryParameters: []
     cleanQueryParameters: []
@@ -7009,7 +7402,7 @@ endpoints:
         name: id
         description: 'The ID of the bank account.'
         required: true
-        example: 1
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -7026,7 +7419,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 3
       bankAccount: 16
     queryParameters: []
     cleanQueryParameters: []
