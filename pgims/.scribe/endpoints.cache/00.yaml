@@ -235,8 +235,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
+        status: 404
+        content: |-
+          {
+              "message": "The route api/user could not be found."
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -4999,7 +5002,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2025-10-18T21:40:40'
+        example: '2025-10-19T05:27:34'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5017,7 +5020,7 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      date: '2025-10-18T21:40:40'
+      date: '2025-10-19T05:27:34'
       store_id:
         - 16
     fileParameters: []
@@ -5100,7 +5103,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-10-18T21:40:40'
+        example: '2025-10-19T05:27:34'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5110,7 +5113,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-11-11'
+        example: '2051-11-12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5128,8 +5131,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-10-18T21:40:40'
-      end: '2051-11-11'
+      start: '2025-10-19T05:27:34'
+      end: '2051-11-12'
       store_id:
         - 16
     fileParameters: []
@@ -5215,7 +5218,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-10-18T21:40:40'
+        example: '2025-10-19T05:27:34'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5225,7 +5228,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-11-11'
+        example: '2051-11-12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5243,8 +5246,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-10-18T21:40:40'
-      end: '2051-11-11'
+      start: '2025-10-19T05:27:34'
+      end: '2051-11-12'
       store_id:
         - 16
     fileParameters: []
@@ -5452,7 +5455,7 @@ endpoints:
         name: start
         description: 'Must be a valid date.'
         required: false
-        example: '2025-10-18T21:40:40'
+        example: '2025-10-19T05:27:34'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5462,7 +5465,7 @@ endpoints:
         name: end
         description: 'Must be a valid date. Must be a date after or equal to <code>start</code>.'
         required: false
-        example: '2051-11-11'
+        example: '2051-11-12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -5480,8 +5483,8 @@ endpoints:
         nullable: false
         custom: []
     cleanBodyParameters:
-      start: '2025-10-18T21:40:40'
-      end: '2051-11-11'
+      start: '2025-10-19T05:27:34'
+      end: '2051-11-12'
       store_id:
         - 16
     fileParameters: []

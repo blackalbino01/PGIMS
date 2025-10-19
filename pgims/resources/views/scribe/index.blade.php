@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost";
+        var tryItOutBaseUrl = "https://pgims-production.up.railway.app/";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -352,7 +352,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: October 18, 2025</li>
+        <li>Last updated: October 19, 2025</li>
     </ul>
 </div>
 
@@ -361,7 +361,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>https://pgims-production.up.railway.app/</code>
 </aside>
 <pre><code>This documentation aims to provide all the information you need to work with our API.
 
@@ -389,7 +389,7 @@ Returns the created user data and auth token.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/register" \
+    "https://pgims-production.up.railway.app/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -403,7 +403,7 @@ Returns the created user data and auth token.</p>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/register"
+    "https://pgims-production.up.railway.app/api/register"
 );
 
 const headers = {
@@ -575,7 +575,7 @@ Returns user data and an authentication token.</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/login" \
+    "https://pgims-production.up.railway.app/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -587,7 +587,7 @@ Returns user data and an authentication token.</p>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/login"
+    "https://pgims-production.up.railway.app/api/login"
 );
 
 const headers = {
@@ -734,14 +734,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/logout" \
+    "https://pgims-production.up.railway.app/api/logout" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/logout"
+    "https://pgims-production.up.railway.app/api/logout"
 );
 
 const headers = {
@@ -851,14 +851,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user" \
+    --get "https://pgims-production.up.railway.app/api/user" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user"
+    "https://pgims-production.up.railway.app/api/user"
 );
 
 const headers = {
@@ -875,7 +875,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-user">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -887,7 +887,7 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The route api/user could not be found.&quot;
 }</code>
  </pre>
     </span>
@@ -975,14 +975,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/users" \
+    --get "https://pgims-production.up.railway.app/api/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/users"
+    "https://pgims-production.up.railway.app/api/users"
 );
 
 const headers = {
@@ -1099,7 +1099,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/users" \
+    "https://pgims-production.up.railway.app/api/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1114,7 +1114,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/users"
+    "https://pgims-production.up.railway.app/api/users"
 );
 
 const headers = {
@@ -1294,14 +1294,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/users/1" \
+    --get "https://pgims-production.up.railway.app/api/users/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/users/1"
+    "https://pgims-production.up.railway.app/api/users/1"
 );
 
 const headers = {
@@ -1439,7 +1439,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/users/1" \
+    "https://pgims-production.up.railway.app/api/users/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1454,7 +1454,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/users/1"
+    "https://pgims-production.up.railway.app/api/users/1"
 );
 
 const headers = {
@@ -1661,14 +1661,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/users/1" \
+    "https://pgims-production.up.railway.app/api/users/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/users/1"
+    "https://pgims-production.up.railway.app/api/users/1"
 );
 
 const headers = {
@@ -1798,14 +1798,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/suppliers" \
+    --get "https://pgims-production.up.railway.app/api/suppliers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/suppliers"
+    "https://pgims-production.up.railway.app/api/suppliers"
 );
 
 const headers = {
@@ -1925,7 +1925,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/suppliers" \
+    "https://pgims-production.up.railway.app/api/suppliers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1941,7 +1941,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/suppliers"
+    "https://pgims-production.up.railway.app/api/suppliers"
 );
 
 const headers = {
@@ -2136,14 +2136,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/suppliers/16" \
+    --get "https://pgims-production.up.railway.app/api/suppliers/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/suppliers/16"
+    "https://pgims-production.up.railway.app/api/suppliers/16"
 );
 
 const headers = {
@@ -2284,7 +2284,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/suppliers/16" \
+    "https://pgims-production.up.railway.app/api/suppliers/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2300,7 +2300,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/suppliers/16"
+    "https://pgims-production.up.railway.app/api/suppliers/16"
 );
 
 const headers = {
@@ -2522,14 +2522,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/suppliers/16" \
+    "https://pgims-production.up.railway.app/api/suppliers/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/suppliers/16"
+    "https://pgims-production.up.railway.app/api/suppliers/16"
 );
 
 const headers = {
@@ -2659,14 +2659,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/products" \
+    --get "https://pgims-production.up.railway.app/api/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products"
+    "https://pgims-production.up.railway.app/api/products"
 );
 
 const headers = {
@@ -2785,7 +2785,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/products" \
+    "https://pgims-production.up.railway.app/api/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2800,7 +2800,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products"
+    "https://pgims-production.up.railway.app/api/products"
 );
 
 const headers = {
@@ -2982,7 +2982,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/products/24" \
+    "https://pgims-production.up.railway.app/api/products/24" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2997,7 +2997,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products/24"
+    "https://pgims-production.up.railway.app/api/products/24"
 );
 
 const headers = {
@@ -3195,14 +3195,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/products/24" \
+    "https://pgims-production.up.railway.app/api/products/24" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/products/24"
+    "https://pgims-production.up.railway.app/api/products/24"
 );
 
 const headers = {
@@ -3332,14 +3332,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/product-categories" \
+    --get "https://pgims-production.up.railway.app/api/product-categories" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/product-categories"
+    "https://pgims-production.up.railway.app/api/product-categories"
 );
 
 const headers = {
@@ -3455,7 +3455,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/product-categories" \
+    "https://pgims-production.up.railway.app/api/product-categories" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3467,7 +3467,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/product-categories"
+    "https://pgims-production.up.railway.app/api/product-categories"
 );
 
 const headers = {
@@ -3610,14 +3610,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/product-categories/1" \
+    --get "https://pgims-production.up.railway.app/api/product-categories/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/product-categories/1"
+    "https://pgims-production.up.railway.app/api/product-categories/1"
 );
 
 const headers = {
@@ -3754,7 +3754,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/product-categories/1" \
+    "https://pgims-production.up.railway.app/api/product-categories/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3766,7 +3766,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/product-categories/1"
+    "https://pgims-production.up.railway.app/api/product-categories/1"
 );
 
 const headers = {
@@ -3925,14 +3925,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/product-categories/1" \
+    "https://pgims-production.up.railway.app/api/product-categories/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/product-categories/1"
+    "https://pgims-production.up.railway.app/api/product-categories/1"
 );
 
 const headers = {
@@ -4062,14 +4062,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/inventory" \
+    --get "https://pgims-production.up.railway.app/api/inventory" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/inventory"
+    "https://pgims-production.up.railway.app/api/inventory"
 );
 
 const headers = {
@@ -4196,7 +4196,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/inventory" \
+    "https://pgims-production.up.railway.app/api/inventory" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4209,7 +4209,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/inventory"
+    "https://pgims-production.up.railway.app/api/inventory"
 );
 
 const headers = {
@@ -4365,14 +4365,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/inventory/16" \
+    --get "https://pgims-production.up.railway.app/api/inventory/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/inventory/16"
+    "https://pgims-production.up.railway.app/api/inventory/16"
 );
 
 const headers = {
@@ -4518,7 +4518,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/inventory/16" \
+    "https://pgims-production.up.railway.app/api/inventory/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4531,7 +4531,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/inventory/16"
+    "https://pgims-production.up.railway.app/api/inventory/16"
 );
 
 const headers = {
@@ -4714,14 +4714,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/inventory/16" \
+    "https://pgims-production.up.railway.app/api/inventory/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/inventory/16"
+    "https://pgims-production.up.railway.app/api/inventory/16"
 );
 
 const headers = {
@@ -4851,14 +4851,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/orders" \
+    --get "https://pgims-production.up.railway.app/api/orders" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders"
+    "https://pgims-production.up.railway.app/api/orders"
 );
 
 const headers = {
@@ -4991,7 +4991,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/orders" \
+    "https://pgims-production.up.railway.app/api/orders" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -5005,7 +5005,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders"
+    "https://pgims-production.up.railway.app/api/orders"
 );
 
 const headers = {
@@ -5208,14 +5208,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/orders/16" \
+    --get "https://pgims-production.up.railway.app/api/orders/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/16"
+    "https://pgims-production.up.railway.app/api/orders/16"
 );
 
 const headers = {
@@ -5369,7 +5369,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/orders/16" \
+    "https://pgims-production.up.railway.app/api/orders/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -5385,7 +5385,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/16"
+    "https://pgims-production.up.railway.app/api/orders/16"
 );
 
 const headers = {
@@ -5640,14 +5640,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/orders/16" \
+    "https://pgims-production.up.railway.app/api/orders/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/16"
+    "https://pgims-production.up.railway.app/api/orders/16"
 );
 
 const headers = {
@@ -5777,14 +5777,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/order-items" \
+    --get "https://pgims-production.up.railway.app/api/order-items" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/order-items"
+    "https://pgims-production.up.railway.app/api/order-items"
 );
 
 const headers = {
@@ -5913,7 +5913,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/order-items" \
+    "https://pgims-production.up.railway.app/api/order-items" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -5928,7 +5928,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/order-items"
+    "https://pgims-production.up.railway.app/api/order-items"
 );
 
 const headers = {
@@ -6110,14 +6110,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/order-items/16" \
+    --get "https://pgims-production.up.railway.app/api/order-items/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/order-items/16"
+    "https://pgims-production.up.railway.app/api/order-items/16"
 );
 
 const headers = {
@@ -6267,7 +6267,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/order-items/16" \
+    "https://pgims-production.up.railway.app/api/order-items/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -6282,7 +6282,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/order-items/16"
+    "https://pgims-production.up.railway.app/api/order-items/16"
 );
 
 const headers = {
@@ -6491,14 +6491,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/order-items/16" \
+    "https://pgims-production.up.railway.app/api/order-items/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/order-items/16"
+    "https://pgims-production.up.railway.app/api/order-items/16"
 );
 
 const headers = {
@@ -6628,14 +6628,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/purchase-orders" \
+    --get "https://pgims-production.up.railway.app/api/purchase-orders" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/purchase-orders"
+    "https://pgims-production.up.railway.app/api/purchase-orders"
 );
 
 const headers = {
@@ -6760,7 +6760,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/purchase-orders" \
+    "https://pgims-production.up.railway.app/api/purchase-orders" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -6777,7 +6777,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/purchase-orders"
+    "https://pgims-production.up.railway.app/api/purchase-orders"
 );
 
 const headers = {
@@ -6985,14 +6985,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/purchase-orders/16" \
+    --get "https://pgims-production.up.railway.app/api/purchase-orders/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/purchase-orders/16"
+    "https://pgims-production.up.railway.app/api/purchase-orders/16"
 );
 
 const headers = {
@@ -7138,7 +7138,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/purchase-orders/16" \
+    "https://pgims-production.up.railway.app/api/purchase-orders/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -7155,7 +7155,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/purchase-orders/16"
+    "https://pgims-production.up.railway.app/api/purchase-orders/16"
 );
 
 const headers = {
@@ -7390,14 +7390,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/purchase-orders/16" \
+    "https://pgims-production.up.railway.app/api/purchase-orders/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/purchase-orders/16"
+    "https://pgims-production.up.railway.app/api/purchase-orders/16"
 );
 
 const headers = {
@@ -7527,14 +7527,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/stock-requisitions" \
+    --get "https://pgims-production.up.railway.app/api/stock-requisitions" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisitions"
+    "https://pgims-production.up.railway.app/api/stock-requisitions"
 );
 
 const headers = {
@@ -7658,7 +7658,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/stock-requisitions" \
+    "https://pgims-production.up.railway.app/api/stock-requisitions" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -7672,7 +7672,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisitions"
+    "https://pgims-production.up.railway.app/api/stock-requisitions"
 );
 
 const headers = {
@@ -7841,14 +7841,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/stock-requisitions/16" \
+    --get "https://pgims-production.up.railway.app/api/stock-requisitions/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisitions/16"
+    "https://pgims-production.up.railway.app/api/stock-requisitions/16"
 );
 
 const headers = {
@@ -7993,7 +7993,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/stock-requisitions/16" \
+    "https://pgims-production.up.railway.app/api/stock-requisitions/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -8007,7 +8007,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisitions/16"
+    "https://pgims-production.up.railway.app/api/stock-requisitions/16"
 );
 
 const headers = {
@@ -8203,14 +8203,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/stock-requisitions/16" \
+    "https://pgims-production.up.railway.app/api/stock-requisitions/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisitions/16"
+    "https://pgims-production.up.railway.app/api/stock-requisitions/16"
 );
 
 const headers = {
@@ -8340,14 +8340,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/stock-requisition-items" \
+    --get "https://pgims-production.up.railway.app/api/stock-requisition-items" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisition-items"
+    "https://pgims-production.up.railway.app/api/stock-requisition-items"
 );
 
 const headers = {
@@ -8473,7 +8473,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/stock-requisition-items" \
+    "https://pgims-production.up.railway.app/api/stock-requisition-items" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -8486,7 +8486,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisition-items"
+    "https://pgims-production.up.railway.app/api/stock-requisition-items"
 );
 
 const headers = {
@@ -8642,14 +8642,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/stock-requisition-items/16" \
+    --get "https://pgims-production.up.railway.app/api/stock-requisition-items/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisition-items/16"
+    "https://pgims-production.up.railway.app/api/stock-requisition-items/16"
 );
 
 const headers = {
@@ -8795,7 +8795,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/stock-requisition-items/16" \
+    "https://pgims-production.up.railway.app/api/stock-requisition-items/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -8808,7 +8808,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisition-items/16"
+    "https://pgims-production.up.railway.app/api/stock-requisition-items/16"
 );
 
 const headers = {
@@ -8991,14 +8991,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/stock-requisition-items/16" \
+    "https://pgims-production.up.railway.app/api/stock-requisition-items/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stock-requisition-items/16"
+    "https://pgims-production.up.railway.app/api/stock-requisition-items/16"
 );
 
 const headers = {
@@ -9128,14 +9128,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/stores" \
+    --get "https://pgims-production.up.railway.app/api/stores" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stores"
+    "https://pgims-production.up.railway.app/api/stores"
 );
 
 const headers = {
@@ -9252,7 +9252,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/stores" \
+    "https://pgims-production.up.railway.app/api/stores" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -9265,7 +9265,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stores"
+    "https://pgims-production.up.railway.app/api/stores"
 );
 
 const headers = {
@@ -9421,14 +9421,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/stores/1" \
+    --get "https://pgims-production.up.railway.app/api/stores/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stores/1"
+    "https://pgims-production.up.railway.app/api/stores/1"
 );
 
 const headers = {
@@ -9566,7 +9566,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/stores/1" \
+    "https://pgims-production.up.railway.app/api/stores/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -9579,7 +9579,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stores/1"
+    "https://pgims-production.up.railway.app/api/stores/1"
 );
 
 const headers = {
@@ -9762,14 +9762,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/stores/1" \
+    "https://pgims-production.up.railway.app/api/stores/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/stores/1"
+    "https://pgims-production.up.railway.app/api/stores/1"
 );
 
 const headers = {
@@ -9899,14 +9899,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/expenses" \
+    --get "https://pgims-production.up.railway.app/api/expenses" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/expenses"
+    "https://pgims-production.up.railway.app/api/expenses"
 );
 
 const headers = {
@@ -10025,7 +10025,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/expenses" \
+    "https://pgims-production.up.railway.app/api/expenses" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -10040,7 +10040,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/expenses"
+    "https://pgims-production.up.railway.app/api/expenses"
 );
 
 const headers = {
@@ -10222,14 +10222,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/expenses/16" \
+    --get "https://pgims-production.up.railway.app/api/expenses/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/expenses/16"
+    "https://pgims-production.up.railway.app/api/expenses/16"
 );
 
 const headers = {
@@ -10369,7 +10369,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/expenses/16" \
+    "https://pgims-production.up.railway.app/api/expenses/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -10384,7 +10384,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/expenses/16"
+    "https://pgims-production.up.railway.app/api/expenses/16"
 );
 
 const headers = {
@@ -10582,14 +10582,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/expenses/16" \
+    "https://pgims-production.up.railway.app/api/expenses/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/expenses/16"
+    "https://pgims-production.up.railway.app/api/expenses/16"
 );
 
 const headers = {
@@ -10719,11 +10719,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/reports/daily-sales?date=architecto&amp;store_id[]=16" \
+    --get "https://pgims-production.up.railway.app/api/reports/daily-sales?date=architecto&amp;store_id[]=16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"date\": \"2025-10-18T21:40:40\",
+    \"date\": \"2025-10-19T05:27:34\",
     \"store_id\": [
         16
     ]
@@ -10733,7 +10733,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/reports/daily-sales"
+    "https://pgims-production.up.railway.app/api/reports/daily-sales"
 );
 
 const params = {
@@ -10749,7 +10749,7 @@ const headers = {
 };
 
 let body = {
-    "date": "2025-10-18T21:40:40",
+    "date": "2025-10-19T05:27:34",
     "store_id": [
         16
     ]
@@ -10877,10 +10877,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="GETapi-reports-daily-sales"
-               value="2025-10-18T21:40:40"
+               value="2025-10-19T05:27:34"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-10-18T21:40:40</code></p>
+<p>Must be a valid date. Example: <code>2025-10-19T05:27:34</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
@@ -10910,12 +10910,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/reports/payment-breakdown?start=architecto&amp;end=architecto&amp;store_id[]=16" \
+    --get "https://pgims-production.up.railway.app/api/reports/payment-breakdown?start=architecto&amp;end=architecto&amp;store_id[]=16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"start\": \"2025-10-18T21:40:40\",
-    \"end\": \"2051-11-11\",
+    \"start\": \"2025-10-19T05:27:34\",
+    \"end\": \"2051-11-12\",
     \"store_id\": [
         16
     ]
@@ -10925,7 +10925,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/reports/payment-breakdown"
+    "https://pgims-production.up.railway.app/api/reports/payment-breakdown"
 );
 
 const params = {
@@ -10942,8 +10942,8 @@ const headers = {
 };
 
 let body = {
-    "start": "2025-10-18T21:40:40",
-    "end": "2051-11-11",
+    "start": "2025-10-19T05:27:34",
+    "end": "2051-11-12",
     "store_id": [
         16
     ]
@@ -11091,10 +11091,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start"                data-endpoint="GETapi-reports-payment-breakdown"
-               value="2025-10-18T21:40:40"
+               value="2025-10-19T05:27:34"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-10-18T21:40:40</code></p>
+<p>Must be a valid date. Example: <code>2025-10-19T05:27:34</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end</code></b>&nbsp;&nbsp;
@@ -11102,10 +11102,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end"                data-endpoint="GETapi-reports-payment-breakdown"
-               value="2051-11-11"
+               value="2051-11-12"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-11</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
@@ -11135,12 +11135,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/reports/profit?start=architecto&amp;end=architecto&amp;store_id[]=16" \
+    --get "https://pgims-production.up.railway.app/api/reports/profit?start=architecto&amp;end=architecto&amp;store_id[]=16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"start\": \"2025-10-18T21:40:40\",
-    \"end\": \"2051-11-11\",
+    \"start\": \"2025-10-19T05:27:34\",
+    \"end\": \"2051-11-12\",
     \"store_id\": [
         16
     ]
@@ -11150,7 +11150,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/reports/profit"
+    "https://pgims-production.up.railway.app/api/reports/profit"
 );
 
 const params = {
@@ -11167,8 +11167,8 @@ const headers = {
 };
 
 let body = {
-    "start": "2025-10-18T21:40:40",
-    "end": "2051-11-11",
+    "start": "2025-10-19T05:27:34",
+    "end": "2051-11-12",
     "store_id": [
         16
     ]
@@ -11307,10 +11307,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start"                data-endpoint="GETapi-reports-profit"
-               value="2025-10-18T21:40:40"
+               value="2025-10-19T05:27:34"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-10-18T21:40:40</code></p>
+<p>Must be a valid date. Example: <code>2025-10-19T05:27:34</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end</code></b>&nbsp;&nbsp;
@@ -11318,10 +11318,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end"                data-endpoint="GETapi-reports-profit"
-               value="2051-11-11"
+               value="2051-11-12"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-11</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
@@ -11351,7 +11351,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/reports/inventory-status?store_id=16" \
+    --get "https://pgims-production.up.railway.app/api/reports/inventory-status?store_id=16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -11362,7 +11362,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/reports/inventory-status"
+    "https://pgims-production.up.railway.app/api/reports/inventory-status"
 );
 
 const params = {
@@ -11518,7 +11518,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/reports/customer-credit?customer_id=16" \
+    --get "https://pgims-production.up.railway.app/api/reports/customer-credit?customer_id=16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -11529,7 +11529,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/reports/customer-credit"
+    "https://pgims-production.up.railway.app/api/reports/customer-credit"
 );
 
 const params = {
@@ -11679,12 +11679,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/reports/expense?start=architecto&amp;end=architecto&amp;store_id[]=16" \
+    --get "https://pgims-production.up.railway.app/api/reports/expense?start=architecto&amp;end=architecto&amp;store_id[]=16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"start\": \"2025-10-18T21:40:40\",
-    \"end\": \"2051-11-11\",
+    \"start\": \"2025-10-19T05:27:34\",
+    \"end\": \"2051-11-12\",
     \"store_id\": [
         16
     ]
@@ -11694,7 +11694,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/reports/expense"
+    "https://pgims-production.up.railway.app/api/reports/expense"
 );
 
 const params = {
@@ -11711,8 +11711,8 @@ const headers = {
 };
 
 let body = {
-    "start": "2025-10-18T21:40:40",
-    "end": "2051-11-11",
+    "start": "2025-10-19T05:27:34",
+    "end": "2051-11-12",
     "store_id": [
         16
     ]
@@ -11851,10 +11851,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="start"                data-endpoint="GETapi-reports-expense"
-               value="2025-10-18T21:40:40"
+               value="2025-10-19T05:27:34"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-10-18T21:40:40</code></p>
+<p>Must be a valid date. Example: <code>2025-10-19T05:27:34</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>end</code></b>&nbsp;&nbsp;
@@ -11862,10 +11862,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="end"                data-endpoint="GETapi-reports-expense"
-               value="2051-11-11"
+               value="2051-11-12"
                data-component="body">
     <br>
-<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-11</code></p>
+<p>Must be a valid date. Must be a date after or equal to <code>start</code>. Example: <code>2051-11-12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>store_id</code></b>&nbsp;&nbsp;
@@ -11895,14 +11895,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/customers" \
+    --get "https://pgims-production.up.railway.app/api/customers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers"
+    "https://pgims-production.up.railway.app/api/customers"
 );
 
 const headers = {
@@ -12025,7 +12025,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/customers" \
+    "https://pgims-production.up.railway.app/api/customers" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -12044,7 +12044,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers"
+    "https://pgims-production.up.railway.app/api/customers"
 );
 
 const headers = {
@@ -12278,14 +12278,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/customers/10" \
+    --get "https://pgims-production.up.railway.app/api/customers/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers/10"
+    "https://pgims-production.up.railway.app/api/customers/10"
 );
 
 const headers = {
@@ -12429,7 +12429,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/customers/10" \
+    "https://pgims-production.up.railway.app/api/customers/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -12448,7 +12448,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers/10"
+    "https://pgims-production.up.railway.app/api/customers/10"
 );
 
 const headers = {
@@ -12709,14 +12709,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/customers/10" \
+    "https://pgims-production.up.railway.app/api/customers/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers/10"
+    "https://pgims-production.up.railway.app/api/customers/10"
 );
 
 const headers = {
@@ -12846,14 +12846,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/transactions" \
+    --get "https://pgims-production.up.railway.app/api/transactions" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/transactions"
+    "https://pgims-production.up.railway.app/api/transactions"
 );
 
 const headers = {
@@ -12978,7 +12978,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/transactions" \
+    "https://pgims-production.up.railway.app/api/transactions" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -12994,7 +12994,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/transactions"
+    "https://pgims-production.up.railway.app/api/transactions"
 );
 
 const headers = {
@@ -13189,14 +13189,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/transactions/16" \
+    --get "https://pgims-production.up.railway.app/api/transactions/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/transactions/16"
+    "https://pgims-production.up.railway.app/api/transactions/16"
 );
 
 const headers = {
@@ -13342,7 +13342,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/transactions/16" \
+    "https://pgims-production.up.railway.app/api/transactions/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -13358,7 +13358,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/transactions/16"
+    "https://pgims-production.up.railway.app/api/transactions/16"
 );
 
 const headers = {
@@ -13580,14 +13580,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/transactions/16" \
+    "https://pgims-production.up.railway.app/api/transactions/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/transactions/16"
+    "https://pgims-production.up.railway.app/api/transactions/16"
 );
 
 const headers = {
@@ -13721,14 +13721,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/notifications?notifiable_type=App%5CModels%5CUser&amp;notifiable_id=1" \
+    --get "https://pgims-production.up.railway.app/api/notifications?notifiable_type=App%5CModels%5CUser&amp;notifiable_id=1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/notifications"
+    "https://pgims-production.up.railway.app/api/notifications"
 );
 
 const params = {
@@ -13878,7 +13878,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/notifications" \
+    "https://pgims-production.up.railway.app/api/notifications" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -13894,7 +13894,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/notifications"
+    "https://pgims-production.up.railway.app/api/notifications"
 );
 
 const headers = {
@@ -14099,14 +14099,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/notifications/16" \
+    --get "https://pgims-production.up.railway.app/api/notifications/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/notifications/16"
+    "https://pgims-production.up.railway.app/api/notifications/16"
 );
 
 const headers = {
@@ -14247,7 +14247,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/notifications/16" \
+    "https://pgims-production.up.railway.app/api/notifications/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -14263,7 +14263,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/notifications/16"
+    "https://pgims-production.up.railway.app/api/notifications/16"
 );
 
 const headers = {
@@ -14495,14 +14495,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/notifications/16" \
+    "https://pgims-production.up.railway.app/api/notifications/16" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/notifications/16"
+    "https://pgims-production.up.railway.app/api/notifications/16"
 );
 
 const headers = {
@@ -14632,7 +14632,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/customers/10/deposit" \
+    "https://pgims-production.up.railway.app/api/customers/10/deposit" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -14643,7 +14643,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/customers/10/deposit"
+    "https://pgims-production.up.railway.app/api/customers/10/deposit"
 );
 
 const headers = {
@@ -14797,14 +14797,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/bank-accounts" \
+    --get "https://pgims-production.up.railway.app/api/bank-accounts" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/bank-accounts"
+    "https://pgims-production.up.railway.app/api/bank-accounts"
 );
 
 const headers = {
@@ -14925,7 +14925,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/bank-accounts" \
+    "https://pgims-production.up.railway.app/api/bank-accounts" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -14942,7 +14942,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/bank-accounts"
+    "https://pgims-production.up.railway.app/api/bank-accounts"
 );
 
 const headers = {
@@ -15150,14 +15150,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/bank-accounts/3" \
+    --get "https://pgims-production.up.railway.app/api/bank-accounts/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/bank-accounts/3"
+    "https://pgims-production.up.railway.app/api/bank-accounts/3"
 );
 
 const headers = {
@@ -15299,7 +15299,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/bank-accounts/3" \
+    "https://pgims-production.up.railway.app/api/bank-accounts/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -15316,7 +15316,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/bank-accounts/3"
+    "https://pgims-production.up.railway.app/api/bank-accounts/3"
 );
 
 const headers = {
@@ -15551,14 +15551,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/bank-accounts/3" \
+    "https://pgims-production.up.railway.app/api/bank-accounts/3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/bank-accounts/3"
+    "https://pgims-production.up.railway.app/api/bank-accounts/3"
 );
 
 const headers = {
